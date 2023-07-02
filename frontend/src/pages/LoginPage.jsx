@@ -1,7 +1,13 @@
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
+
 const LoginPage = () => {
+  const { name } = useContext(AuthContext);
+  console.log(name);
   return (
     <div className="w-full min-h-screen flex items-center justify-center">
       <form className="flex flex-col gap-y-4" action="">
+        <p>Hello {name}</p>
         <input
           className="px-6 py-2 border-[1px] border-gray-600 focus-within:outline-none rounded-md"
           type="text"
