@@ -8,6 +8,7 @@ import "./index.css";
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import Header from "./components/Header";
+import PrivateRoute from "./utils/PrivateRoute";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -15,8 +16,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Header />
       <Routes>
         <Route element={<LoginPage />} path="/" exact />
-        <Route element={<HomePage />} path="/home" />
       </Routes>
+      <PrivateRoute element={<HomePage />} path="/home" />
     </Router>
   </React.StrictMode>
 );
